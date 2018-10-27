@@ -1,10 +1,12 @@
 import React, { Component } from 'react'
 
+import './Image.css'
+
 const Image = () => {
   return (
-    <div>
+    <div className="Image">
       <div>
-        image: <img src="" />
+        <img src="https://via.placeholder.com/150" />
       </div>
       <div>caption</div>
     </div>

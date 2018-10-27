@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 const Search = () => {
   return (
     <div>
-      Key word: <input type="text" />
+      Keyword: <input type="text" />
     </div>
   )
 }

@@ -1,9 +1,12 @@
 import React, { Component } from 'react'
+
 import Image from './Image'
+
+import './Gallery.css'
 
 const Gallery = () => {
   return (
-    <div>
+    <div className="Gallery">
       <Image />
       <Image />
       <Image />
