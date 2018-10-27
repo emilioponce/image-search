@@ -1,6 +1,6 @@
-import React, { Component } from 'react'
+import React from 'react'
 
-import Search from './Search'
+import Search from '../containers/Search'
 import Gallery from './Gallery'
 
 import './Main.css'
