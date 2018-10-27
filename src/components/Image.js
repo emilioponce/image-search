@@ -2,13 +2,13 @@ import React, { Component } from 'react'
 
 import './Image.css'
 
-const Image = () => {
+const Image = props => {
   return (
     <div className="Image">
       <div>
         <img src="https://via.placeholder.com/150" />
       </div>
-      <div>caption</div>
+      <div>{props.caption}</div>
     </div>
   )
 }

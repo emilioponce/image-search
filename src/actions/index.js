@@ -1,27 +1,40 @@
+import {
+  FETCH_IMAGES_SUCCESS,
+  FETCH_IMAGES_FAILURE,
+  FETCH_IMAGES_STARTED
+} from './types'
+
 import axios from 'axios'
 
-/*
-* ACTIONS
-*/
-export const FETCH_IMAGES = 'FETCH_IMAGES'
-
-/*
- * ACTION CREATORS
- */
-export const fetchImages = npag => {
-  const URL = 'https://blablabla/' + npag
-  console.log('URL', URL)
+export const fetchImages = ({ keyword }) => {
+  const ENDPOINT = `https://jsonplaceholder.typicode.com/${keyword}`
   return dispatch => {
-    return axios.get(URL).then(
-      response => {
-        dispatch({
-          type: FETCH_IMAGES,
-          payload: response
-        })
-      },
-      error => {
-        throw error
-      }
-    )
+    dispatch(fetchImageStarted())
+    axios
+      .get(ENDPOINT)
+      .then(res => {
+        dispatch(fetchImagesSuccess(res.data))
+      })
+      .catch(err => {
+        dispatch(fetchImagesFailure(err.message))
+      })
   }
 }
+
+const fetchImageStarted = () => ({
+  type: FETCH_IMAGES_STARTED
+})
+
+const fetchImagesSuccess = images => ({
+  type: FETCH_IMAGES_SUCCESS,
+  payload: {
+    ...images
+  }
+})
+
+const fetchImagesFailure = error => ({
+  type: FETCH_IMAGES_FAILURE,
+  payload: {
+    error
+  }
+})

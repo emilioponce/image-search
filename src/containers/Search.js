@@ -5,44 +5,46 @@ import { fetchImages } from '../actions'
 import './Search.css'
 
 class Search extends Component {
-  constructor(props) {
-    super(props)
+  constructor() {
+    super()
     this.state = {
       keyword: ''
     }
+    this.handleChange = this.handleChange.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
   }
 
-  handleInput = e => {
-    this.setState({ keyword: e.target.value })
+  handleChange(event) {
+    this.setState({ keyword: event.target.value })
   }
 
-  handleClick = () => {
+  handleSubmit(event) {
+    event.preventDefault()
     const { keyword } = this.state
-    //TODO 1 is a placeholder before pagination
-    fetchImages(1)
+    this.props.fetchImages({ keyword })
+    this.setState({ keyword: '' })
   }
 
-  render = () => {
+  render() {
+    const { keyword } = this.state
     return (
-      <div>
+      <form onSubmit={this.handleSubmit}>
         <div>
-          Keyword:{' '}
-          <input
-            type="text"
-            className="input"
-            placeholder="Search images..."
-            onChange={this.handleInput}
-          />
+          <input type="text" value={keyword} onChange={this.handleChange} />
         </div>
-        <button type="button" onClick={this.handleClick}>
-          Search
-        </button>
-      </div>
+        <button type="submit">SEARCH</button>
+      </form>
     )
+  }
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    fetchImages: keyword => dispatch(fetchImages(keyword))
   }
 }
 
 export default connect(
   null,
-  { fetchImages }
+  mapDispatchToProps
 )(Search)

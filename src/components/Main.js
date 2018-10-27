@@ -1,7 +1,7 @@
 import React from 'react'
 
 import Search from '../containers/Search'
-import Gallery from './Gallery'
+import Gallery from '../containers/Gallery'
 
 import './Main.css'
 
