@@ -31,7 +31,8 @@
   },
   "scripts": {
     "start": "webpack-dev-server --mode development --open",
-    "build": "webpack --mode production"
+    "build": "webpack --mode production",
+    "test": "jest --watch"
   },
   "repository": {
     "type": "git",
@@ -40,11 +41,12 @@
   "keywords": [
     "react",
     "redux",
+    "webpack",
     "gallery",
     "responsive",
     "Flickr"
   ],
-  "author": "Emilio Ponce",
+  "author": "Emilio <ponce.alcalde@gmail.com>",
   "license": "GPL-3.0",
   "bugs": {
     "url": "https://github.com/emilioponce/image-search/issues"

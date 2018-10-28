@@ -8,13 +8,16 @@ import './Gallery.css'
 
 const Gallery = ({ images }) => {
   if (_.isEmpty(images)) {
-    return <div />
+    return <div className="Gallery" />
   }
 
-  console.log('IMAGES', images[0][0].title)
+  let photos = images.photo
+
   return (
     <div className="Gallery">
-      <Image url="url" caption={images[0][0].title} />
+      {photos.map(photo => (
+        <Image key={photo.id} url={photo.url_q} caption={photo.title} />
+      ))}
     </div>
   )
 }

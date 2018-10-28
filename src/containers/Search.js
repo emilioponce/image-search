@@ -21,18 +21,28 @@ class Search extends Component {
   handleSubmit(event) {
     event.preventDefault()
     const { keyword } = this.state
-    this.props.fetchImages({ keyword })
-    this.setState({ keyword: '' })
+    if (keyword !== '') {
+      this.props.fetchImages(keyword)
+      this.setState({ keyword: '' })
+    }
   }
 
   render() {
     const { keyword } = this.state
     return (
       <form onSubmit={this.handleSubmit}>
-        <div>
-          <input type="text" value={keyword} onChange={this.handleChange} />
+        <div className="wrapperSearch">
+          <input
+            type="text"
+            value={keyword}
+            onChange={this.handleChange}
+            placeholder="Search a term ..."
+            className="input"
+          />
+          <button type="submit" className="button ">
+            SEARCH
+          </button>
         </div>
-        <button type="submit">SEARCH</button>
       </form>
     )
   }

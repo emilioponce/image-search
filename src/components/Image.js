@@ -1,14 +1,17 @@
-import React, { Component } from 'react'
+import React from 'react'
 
 import './Image.css'
 
-const Image = props => {
+const Image = ({ url, caption }) => {
+  let finalCaption =
+    caption.length > 20 ? caption.slice(0, 20).concat(' ...') : caption
+
   return (
-    <div className="Image">
+    <div className="image">
       <div>
-        <img src="https://via.placeholder.com/150" />
+        <img src={url} />
       </div>
-      <div>{props.caption}</div>
+      <div className="caption">{finalCaption}</div>
     </div>
   )
 }

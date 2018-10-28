@@ -1,5 +1,8 @@
-.Image {
-  background-color: rgb(194, 194, 218);
-  margin: 10px;
-  max-width: 150px;
+.image {
+  background-color: rgb(238, 238, 238);
+  box-shadow: 7px 7px 10px 0px rgba(0, 0, 0, 0.15);
+}
+
+.caption {
+  font-size: 80%;
 }

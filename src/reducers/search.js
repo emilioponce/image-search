@@ -22,7 +22,7 @@ const imagesReducer = (state = initialState, action) => {
         ...state,
         loading: false,
         error: null,
-        images: [...state.images, action.payload]
+        images: action.payload.images.photos
       }
     case FETCH_IMAGES_FAILURE:
       return {
