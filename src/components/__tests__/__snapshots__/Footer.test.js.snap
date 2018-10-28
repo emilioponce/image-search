@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footer component Snapshot matchs 1`] = `
+<div
+  className="footer"
+>
+  Emilio Ponce 
+  <a
+    href="https://www.github.com/emilioponce"
+  >
+    Github
+  </a>
+</div>
+`;

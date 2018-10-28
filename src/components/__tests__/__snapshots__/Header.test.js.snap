@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header component Snapshot matchs 1`] = `
+<div
+  className="Header"
+>
+  <h1>
+    IMAGE SEARCH. A Flickr Gallery with react & redux
+  </h1>
+</div>
+`;

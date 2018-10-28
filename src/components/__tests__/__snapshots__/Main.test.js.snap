@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Main component Snapshot matchs 1`] = `
+<div
+  className="Main"
+>
+  <mock-search />
+  <mock-gallery />
+</div>
+`;
