@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import _ from 'lodash'
+import PropTypes from 'prop-types'
 
 import Image from '../components/Image'
 
@@ -13,6 +14,10 @@ const Gallery = ({ images }) => {
 
   let photos = images.photo
 
+  if (_.isEmpty(photos)) {
+    return <div className="Gallery">No results found</div>
+  }
+
   return (
     <div className="Gallery">
       {photos.map(photo => (
@@ -24,6 +29,10 @@ const Gallery = ({ images }) => {
 
 const mapStateToProps = state => {
   return { images: state.search.images }
+}
+
+Gallery.propTypes = {
+  images: PropTypes.object.isRequired
 }
 
 export default connect(mapStateToProps)(Gallery)

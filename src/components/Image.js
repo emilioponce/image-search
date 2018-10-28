@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 import './Image.css'
 
@@ -14,6 +15,11 @@ const Image = ({ url, caption }) => {
       <div className="caption">{finalCaption}</div>
     </div>
   )
+}
+
+Image.propTypes = {
+  url: PropTypes.string,
+  caption: PropTypes.string
 }
 
 export default Image
