@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Image component Snapshot matchs 1`] = `
+<div
+  className="image"
+>
+  <div>
+    <img
+      src="https://farm2.staticflickr.com/1968/30605441267_65d5469660_q.jpg"
+    />
+  </div>
+  <div
+    className="caption"
+  >
+    title text
+  </div>
+</div>
+`;
