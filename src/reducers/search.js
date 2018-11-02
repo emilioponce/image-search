@@ -7,6 +7,8 @@ import {
 const initialState = {
   loading: false,
   images: {},
+  keyword: '',
+  page: 1,
   error: null
 }
 
@@ -21,8 +23,10 @@ const imagesReducer = (state = initialState, action) => {
       return {
         ...state,
         loading: false,
-        error: null,
-        images: action.payload.images.photos
+        images: action.payload.images.photos,
+        keyword: action.payload.keyword,
+        page: action.payload.page,
+        error: null
       }
     case FETCH_IMAGES_FAILURE:
       return {

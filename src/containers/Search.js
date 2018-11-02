@@ -3,12 +3,13 @@ import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 
 import { fetchImages } from '../actions'
+import { FIRST_PAGE } from '../config/constants'
 
 import './Search.css'
 
 class Search extends Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
     this.state = {
       keyword: ''
     }
@@ -21,9 +22,9 @@ class Search extends Component {
   handleSubmit = event => {
     event.preventDefault()
     const { keyword } = this.state
+
     if (keyword !== '') {
-      this.props.fetchImages(keyword)
-      this.setState({ keyword: '' })
+      this.props.fetchImages(keyword, FIRST_PAGE)
     }
   }
 
@@ -50,7 +51,7 @@ class Search extends Component {
 
 const mapDispatchToProps = dispatch => {
   return {
-    fetchImages: keyword => dispatch(fetchImages(keyword))
+    fetchImages: (keyword, page) => dispatch(fetchImages(keyword, page))
   }
 }
 

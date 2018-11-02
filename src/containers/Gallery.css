@@ -1,21 +1,47 @@
 .Gallery {
-  display: flex;
-  flex-wrap: wrap;
   border: 1px solid #e2e2e2;
   padding: 20px;
   min-height: 500px;
-  max-height: 500px;
-  overflow: auto;
+  width: 100%;
+  text-align: right;
 }
 
 @supports (display: grid) {
-  .Gallery {
+  .Images {
     display: grid;
     grid-template-columns: repeat(auto-fit, 150px);
     grid-gap: 2rem;
   }
 
-  .Gallery {
+  .Images {
     margin: 0;
   }
+}
+
+.pagination {
+  display: inline-block;
+  margin-right: 15px;
+}
+
+.pagination > li {
+  display: inline;
+  padding: 8px 16px;
+}
+
+.pagination > li.active {
+  background-color: #282c33;
+}
+
+.pagination > li:hover:not(.active) {
+  background-color: #e2e2e2;
+}
+
+.pagination > li.active > a {
+  color: white;
+  text-decoration: none;
+}
+
+.pagination > li:not(.active) > a {
+  color: #282c33;
+  text-decoration: none;
 }
