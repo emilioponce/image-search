@@ -5,7 +5,7 @@ import './Image.css'
 
 const Image = ({ url, caption }) => {
   let finalCaption =
-    caption.length > 20 ? caption.slice(0, 20).concat(' ...') : caption
+    caption.length > 20 ? caption.slice(0, 15).concat(' ...') : caption
 
   return (
     <div className="image">

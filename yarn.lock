@@ -1094,7 +1094,7 @@ babel-register@^6.26.0:
     mkdirp "^0.5.1"
     source-map-support "^0.4.15"
 
-babel-runtime@^6.22.0, babel-runtime@^6.26.0:
+babel-runtime@^6.22.0, babel-runtime@^6.26.0, babel-runtime@^6.6.1:
   version "6.26.0"
   resolved "https://registry.yarnpkg.com/babel-runtime/-/babel-runtime-6.26.0.tgz#965c7058668e82b55d7bfe04ff2337bc8b5647fe"
   dependencies:
@@ -4798,6 +4798,14 @@ react-js-pagination@^3.0.2:
 react-lifecycles-compat@^3.0.0:
   version "3.0.4"
   resolved "https://registry.yarnpkg.com/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
+
+react-loader-spinner@^2.0.6:
+  version "2.0.6"
+  resolved "https://registry.yarnpkg.com/react-loader-spinner/-/react-loader-spinner-2.0.6.tgz#88bb2b740ce6d78dd8e2f1b1b2e0fd63172f377a"
+  integrity sha512-/8VNhfjI0iDk1sm9WWMm1ieFD/1bHmXMVrSx1Hx254qrQKsBk6EEK09emxGUQdvUsz87i54AjPLMdI0qEB4wZQ==
+  dependencies:
+    babel-runtime "^6.6.1"
+    prop-types "^15.6.2"
 
 react-redux@^5.1.0:
   version "5.1.0"

@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import _ from 'lodash'
 import PropTypes from 'prop-types'
 import Pagination from 'react-js-pagination'
+import Loader from 'react-loader-spinner'
 
 import Image from '../components/Image'
 import { fetchImages } from '../actions'
@@ -17,8 +18,17 @@ class Gallery extends Component {
   }
 
   render = () => {
-    const { images } = this.props
-    const { page } = this.props
+    const { images, page, loading } = this.props
+
+    if (loading) {
+      return (
+        <div className="Gallery">
+          <div className="Loading">
+            <Loader type="TailSpin" color="#00BFFF" height="100" width="100" />
+          </div>
+        </div>
+      )
+    }
 
     if (_.isEmpty(images)) {
       return <div className="Gallery" />
@@ -60,7 +70,8 @@ const mapStateToProps = state => {
   return {
     images: state.search.images,
     keyword: state.search.keyword,
-    page: state.search.page
+    page: state.search.page,
+    loading: state.search.loading
   }
 }
 
@@ -74,6 +85,7 @@ Gallery.propTypes = {
   images: PropTypes.object.isRequired,
   keyword: PropTypes.string.isRequired,
   page: PropTypes.number.isRequired,
+  loading: PropTypes.bool.isRequired,
   fetchImages: PropTypes.func.isRequired
 }
 
