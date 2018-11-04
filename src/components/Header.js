@@ -3,8 +3,13 @@ import './Header.css'
 
 const Header = () => {
   return (
-    <div className="Header">
-      <h1>IMAGE SEARCH. A Flickr Gallery with react & redux</h1>
+    <div className="Wrapper">
+      <div className="Header">
+        <div className="Title">Image Search</div>
+        <div className="Subtitle">
+          A Flickr Search Gallery using react & redux
+        </div>
+      </div>
     </div>
   )
 }

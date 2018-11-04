@@ -36,7 +36,7 @@ class Image extends Component {
           <img src={url} />
         </div>
         <div className="caption">
-          {title.length > 20 ? title.slice(0, 15).concat(' ...') : title}
+          {title.length > 20 ? title.slice(0, 12).concat(' ...') : title}
         </div>
         {isOpen && (
           <Lightbox

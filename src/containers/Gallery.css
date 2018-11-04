@@ -1,7 +1,7 @@
 .Gallery {
-  border: 1px solid #e2e2e2;
-  padding: 15px;
-  min-height: 500px;
+  border-top: 1px solid #202329;
+  margin-bottom: 30px;
+  background-color: #323841;
 }
 
 @supports (display: grid) {
@@ -25,24 +25,28 @@
 .pagination > li {
   display: inline;
   padding: 6px 16px;
+  background-color: #202329;
+  margin: 1px;
 }
 
 .pagination > li.active {
-  background-color: #282c33;
-}
-
-.pagination > li:hover:not(.active) {
-  background-color: #e2e2e2;
+  background-color: #61dafb;
+  color: #000000;
 }
 
 .pagination > li.active > a {
-  color: white;
+  color: #000000;
   text-decoration: none;
 }
 
 .pagination > li:not(.active) > a {
-  color: #282c33;
+  color: #ffffff;
   text-decoration: none;
+}
+
+.pagination > li:hover:not(.active) {
+  background-color: black;
+  color: white;
 }
 
 .Loading {

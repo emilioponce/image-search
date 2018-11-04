@@ -24,7 +24,7 @@ class Gallery extends Component {
       return (
         <div className="Gallery">
           <div className="Loading">
-            <Loader type="TailSpin" color="#00BFFF" height="100" width="100" />
+            <Loader type="TailSpin" color="#61dafb" height="100" width="100" />
           </div>
         </div>
       )

@@ -2,10 +2,21 @@
 
 exports[`Header component Snapshot matchs 1`] = `
 <div
-  className="Header"
+  className="Wrapper"
 >
-  <h1>
-    IMAGE SEARCH. A Flickr Gallery with react & redux
-  </h1>
+  <div
+    className="Header"
+  >
+    <div
+      className="Title"
+    >
+      Image Search
+    </div>
+    <div
+      className="Subtitle"
+    >
+      A Flickr Search Gallery using react & redux
+    </div>
+  </div>
 </div>
 `;

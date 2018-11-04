@@ -41,7 +41,7 @@ class Search extends Component {
             className="input"
           />
           <button type="submit" className="button ">
-            SEARCH
+            Search
           </button>
         </div>
       </form>

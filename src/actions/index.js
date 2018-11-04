@@ -56,7 +56,6 @@ api_key=${FLICKR_API_KEY}&
 text=${keyword}&
 format=${FLICKR_FORMAT}&
 nojsoncallback=${FLICKR_NO_JSON_CALLBACK}&
-extras=url_q&
 per_page=${FLICKR_PER_PAGE}&
 page=${page}&
 extras=${FLICKR_EXTRAS}`

@@ -1,3 +1,26 @@
-.footer {
+.Footer {
+  background-color: #202329;
+  color: #ffffff;
+  padding: 10px;
+  font-size: 80%;
+  position: fixed;
+  left: 0px;
+  bottom: 0px;
+  width: 100%;
+}
+
+.Element {
   margin-left: 5px;
+  margin-right: 5px;
+}
+
+.Element > a,
+.Element-right > a {
+  color: white;
+}
+
+.Element-right {
+  color: white;
+  float: right;
+  margin-right: 20px;
 }

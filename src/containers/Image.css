@@ -1,8 +1,10 @@
 .image {
-  background-color: rgb(238, 238, 238);
+  background-color: #383e47;
+  color: white;
   box-shadow: 7px 7px 10px 0px rgba(0, 0, 0, 0.15);
 }
 
 .caption {
   font-size: 80%;
+  padding: 2px;
 }
