@@ -5,7 +5,7 @@ import PropTypes from 'prop-types'
 import Pagination from 'react-js-pagination'
 import Loader from 'react-loader-spinner'
 
-import Image from '../components/Image'
+import Image from './Image'
 import { fetchImages } from '../actions'
 import { PAGE_RANGE } from '../config/constants'
 
@@ -51,7 +51,15 @@ class Gallery extends Component {
         />
         <div className="Images">
           {photos.map(photo => (
-            <Image key={photo.id} url={photo.url_q} caption={photo.title} />
+            <Image
+              key={photo.id}
+              url={photo.url_q}
+              urlBig={photo.url_m}
+              title={photo.title}
+              date={photo.dateupload}
+              owner={photo.ownername}
+              description={photo.description}
+            />
           ))}
         </div>
         <Pagination

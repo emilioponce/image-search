@@ -8,11 +8,23 @@ describe('Image component', () => {
   const props = {
     id: jest.fn(),
     url_q: 'https://farm2.staticflickr.com/1968/30605441267_65d5469660_q.jpg',
-    caption: 'title text'
+    urlBig: 'https://farm2.staticflickr.com/1968/30605441267_65d5469660.jpg',
+    title: 'title text',
+    dateupload: '1541339304',
+    ownername: 'owner',
+    decription: 'image description'
   }
 
   const component = (
-    <Image key={props.id} url={props.url_q} caption={props.caption} />
+  <Image
+    key={props.id}
+    url={props.url_q}
+    urlBig={props.url_m}
+    title={props.title}
+    date={props.dateupload}
+    owner={props.ownername}
+    description={props.description}
+  />
   )
 
   it('Renders without crashing', () => {

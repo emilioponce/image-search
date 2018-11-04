@@ -4,23 +4,23 @@ import {
   FETCH_IMAGES_STARTED
 } from './types'
 
-import { FLICKR_API_KEY } from '../config/constants'
+import {
+  FLICKR_API,
+  FLICKR_METHOD,
+  FLICKR_API_KEY,
+  FLICKR_FORMAT,
+  FLICKR_NO_JSON_CALLBACK,
+  FLICKR_EXTRAS,
+  FLICKR_PER_PAGE
+} from '../config/constants'
 
 import axios from 'axios'
 
 export const fetchImages = (keyword, page) => {
-  let FLICKR_ENDPOINT = `https://api.flickr.com/services/rest/?method=flickr.photos.search&
-api_key=${FLICKR_API_KEY}&
-text=${keyword}&
-format=json&
-nojsoncallback=1&
-extras=url_q&
-page=${page}`
-
   return dispatch => {
     dispatch(fetchImageStarted())
     axios
-      .get(FLICKR_ENDPOINT)
+      .get(getFlickrEndpoint(keyword, page))
       .then(res => {
         dispatch(fetchImagesSuccess(keyword, res.data, page))
       })
@@ -49,3 +49,15 @@ const fetchImagesFailure = error => ({
     error
   }
 })
+
+const getFlickrEndpoint = (keyword, page) => {
+  return `${FLICKR_API}?method=${FLICKR_METHOD}&
+api_key=${FLICKR_API_KEY}&
+text=${keyword}&
+format=${FLICKR_FORMAT}&
+nojsoncallback=${FLICKR_NO_JSON_CALLBACK}&
+extras=url_q&
+per_page=${FLICKR_PER_PAGE}&
+page=${page}&
+extras=${FLICKR_EXTRAS}`
+}

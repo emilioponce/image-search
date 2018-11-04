@@ -30,9 +30,11 @@
   "dependencies": {
     "axios": "^0.18.0",
     "lodash": "^4.17.11",
+    "moment": "^2.22.2",
     "proptypes": "^1.1.0",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
+    "react-image-lightbox": "^5.0.0",
     "react-js-pagination": "^3.0.2",
     "react-loader-spinner": "^2.0.6",
     "react-redux": "^5.1.0",

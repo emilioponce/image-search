@@ -3,6 +3,7 @@
 exports[`Image component Snapshot matchs 1`] = `
 <div
   className="image"
+  onClick={[Function]}
 >
   <div>
     <img
