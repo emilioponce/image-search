@@ -8,11 +8,8 @@ import { FIRST_PAGE } from '../config/constants'
 import './Search.css'
 
 class Search extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      keyword: ''
-    }
+  state = {
+    keyword: ''
   }
 
   handleChange = event => {

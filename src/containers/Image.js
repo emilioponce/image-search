@@ -7,13 +7,8 @@ import 'react-image-lightbox/style.css'
 import './Image.css'
 
 class Image extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      isOpen: false
-    }
-    this.openLightBox = this.openLightBox.bind(this)
-    this.closeLightBox = this.closeLightBox.bind(this)
+  state = {
+    isOpen: false
   }
 
   openLightBox = () => {
@@ -43,9 +38,7 @@ class Image extends Component {
             mainSrc={urlBig}
             onCloseRequest={this.closeLightBox}
             imageTitle={title}
-            imageCaption={`${
-              description._content
-            } (Owner: ${owner}. Uploaded: ${humanReadableDate}) `}
+            imageCaption={`${description._content} (Owner: ${owner}. Uploaded: ${humanReadableDate}) `}
           />
         )}
       </div>

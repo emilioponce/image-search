@@ -1,3 +1,5 @@
+import { createSelector } from 'reselect'
+
 import {
   FETCH_IMAGES_STARTED,
   FETCH_IMAGES_SUCCESS,
@@ -38,5 +40,20 @@ const imagesReducer = (state = initialState, action) => {
       return state
   }
 }
+
+// Selector
+const getSearchResults = state => state.search
+// Memoized selector
+export const getSearchResultsSelector = createSelector(
+  getSearchResults,
+  search => {
+    return {
+      images: search.images,
+      keyword: search.keyword,
+      page: search.page,
+      loading: search.loading
+    }
+  }
+)
 
 export default imagesReducer
