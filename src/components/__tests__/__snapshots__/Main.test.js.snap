@@ -4,7 +4,13 @@ exports[`Main component Snapshot matchs 1`] = `
 <div
   className="Main"
 >
-  <mock-search />
+  <div
+    className="SearchArea"
+  >
+    <mock-search />
+    <mock-clearSearch />
+  </div>
+  <mock-status />
   <mock-gallery />
 </div>
 `;

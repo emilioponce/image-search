@@ -7,6 +7,8 @@ import Main from '../Main'
 // how to avoid JEST warnings -> https://github.com/facebook/jest/issues/5258
 jest.mock('../../containers/Search', () => 'mock-search')
 jest.mock('../../containers/Gallery', () => 'mock-gallery')
+jest.mock('../../containers/ClearSearch', () => 'mock-clearSearch')
+jest.mock('../../containers/Status', () => 'mock-status')
 
 describe('Main component', () => {
   const component = <Main />
