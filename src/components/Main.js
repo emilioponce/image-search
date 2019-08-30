@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Search from '../containers/Search'
+import SearchArea from './SearchArea'
 import Gallery from '../containers/Gallery'
 
 import './Main.css'
@@ -8,7 +8,7 @@ import './Main.css'
 const Main = () => {
   return (
     <div className="Main">
-      <Search />
+      <SearchArea />
       <Gallery />
     </div>
   )

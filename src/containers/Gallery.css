@@ -55,3 +55,9 @@
   align-items: center;
   justify-content: center;
 }
+
+.Counter {
+  display: inline-block;
+  font-size: 80%;
+  color: white;
+}

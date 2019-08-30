@@ -1,7 +1,8 @@
 import {
   FETCH_IMAGES_SUCCESS,
   FETCH_IMAGES_FAILURE,
-  FETCH_IMAGES_STARTED
+  FETCH_IMAGES_STARTED,
+  CLEAR_SEARCH
 } from './types'
 
 import {
@@ -50,6 +51,11 @@ const fetchImagesFailure = error => ({
   }
 })
 
+export const clearSearch = () => ({
+  type: CLEAR_SEARCH
+})
+
+// TODO: Move to somewhere else
 const getFlickrEndpoint = (keyword, page) => {
   return `${FLICKR_API}?method=${FLICKR_METHOD}&
 api_key=${FLICKR_API_KEY}&

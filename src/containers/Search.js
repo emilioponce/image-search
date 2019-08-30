@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
 import PropTypes from 'prop-types'
 
 import { fetchImages } from '../actions'
@@ -26,13 +27,16 @@ class Search extends Component {
   }
 
   render = () => {
-    const { keyword } = this.state
+    console.log(
+      `RENDER keyword store: state:${this.state.keyword}, props:${this.props.keyword}`
+    )
+
     return (
       <form onSubmit={this.handleSubmit}>
         <div className="wrapperSearch">
           <input
             type="text"
-            value={keyword}
+            value={this.state.keyword}
             onChange={this.handleChange}
             placeholder="Search a term ..."
             className="input"
@@ -46,10 +50,14 @@ class Search extends Component {
   }
 }
 
-const mapDispatchToProps = dispatch => {
+const mapStateToProps = state => {
   return {
-    fetchImages: (keyword, page) => dispatch(fetchImages(keyword, page))
+    keyword: state.search.keyword
   }
+}
+
+const mapDispatchToProps = dispatch => {
+  return bindActionCreators({ fetchImages }, dispatch)
 }
 
 Search.propTypes = {
@@ -57,6 +65,6 @@ Search.propTypes = {
 }
 
 export default connect(
-  null,
+  mapStateToProps,
   mapDispatchToProps
 )(Search)

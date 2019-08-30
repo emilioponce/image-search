@@ -3,7 +3,8 @@ import { createSelector } from 'reselect'
 import {
   FETCH_IMAGES_STARTED,
   FETCH_IMAGES_SUCCESS,
-  FETCH_IMAGES_FAILURE
+  FETCH_IMAGES_FAILURE,
+  CLEAR_SEARCH
 } from '../actions/types'
 
 const initialState = {
@@ -36,12 +37,16 @@ const imagesReducer = (state = initialState, action) => {
         loading: false,
         error: action.payload.error
       }
+    case CLEAR_SEARCH:
+      return {
+        ...initialState
+      }
     default:
       return state
   }
 }
 
-// Selector
+// Selector search results
 const getSearchResults = state => state.search
 // Memoized selector
 export const getSearchResultsSelector = createSelector(
@@ -54,6 +59,12 @@ export const getSearchResultsSelector = createSelector(
       loading: search.loading
     }
   }
+)
+// Selector total amount of results
+const getTotalAmountOfResults = state => state.search.images
+export const getTotalAmountOfResultsSelector = createSelector(
+  getTotalAmountOfResults,
+  images => images.total
 )
 
 export default imagesReducer
