@@ -23,7 +23,7 @@ const mapStateToProps = state => {
 }
 
 Status.propTypes = {
-  total: PropTypes.number.isRequired
+  total: PropTypes.string
 }
 
 export default connect(

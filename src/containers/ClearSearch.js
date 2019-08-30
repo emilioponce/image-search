@@ -38,7 +38,7 @@ const mapDispatchToProps = dispatch => {
 }
 
 ClearSearch.propTypes = {
-  total: PropTypes.number.isRequired,
+  total: PropTypes.string,
   clearSearch: PropTypes.func.isRequired
 }
 
