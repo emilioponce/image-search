@@ -2,6 +2,7 @@ import { connect } from 'react-redux'
 import React from 'react'
 import { getTotalAmountOfResultsSelector } from '../reducers/search'
 import { BIG_AMOUNT_OF_RESULTS } from '../config/constants'
+import PropTypes from 'prop-types'
 
 import './Status.css'
 
@@ -19,6 +20,10 @@ const mapStateToProps = state => {
   return {
     total: getTotalAmountOfResultsSelector(state)
   }
+}
+
+Status.propTypes = {
+  total: PropTypes.number.isRequired
 }
 
 export default connect(

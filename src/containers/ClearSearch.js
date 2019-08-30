@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { getTotalAmountOfResultsSelector } from '../reducers/search'
-
+import PropTypes from 'prop-types'
 import { clearSearch } from '../actions'
 
 import './ClearSearch.css'
@@ -35,6 +35,11 @@ const mapDispatchToProps = dispatch => {
   return {
     clearSearch: () => dispatch(clearSearch())
   }
+}
+
+ClearSearch.propTypes = {
+  total: PropTypes.number.isRequired,
+  clearSearch: PropTypes.func.isRequired
 }
 
 export default connect(

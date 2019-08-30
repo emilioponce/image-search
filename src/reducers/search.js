@@ -4,7 +4,8 @@ import {
   FETCH_IMAGES_STARTED,
   FETCH_IMAGES_SUCCESS,
   FETCH_IMAGES_FAILURE,
-  CLEAR_SEARCH
+  CLEAR_SEARCH,
+  MODIFY_KEYWORD
 } from '../actions/types'
 
 const initialState = {
@@ -40,6 +41,11 @@ const imagesReducer = (state = initialState, action) => {
     case CLEAR_SEARCH:
       return {
         ...initialState
+      }
+    case MODIFY_KEYWORD:
+      return {
+        ...state,
+        keyword: action.payload.keyword
       }
     default:
       return state

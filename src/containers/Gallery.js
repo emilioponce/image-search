@@ -77,7 +77,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return bindActionCreators({ fetchImages }, dispatch)
-  /* NOTE Alternative way: without bindActionCreators. Dispatching action by hand, more explicit but verbose
+  /* NOTE that exists an alternative way without bindActionCreators. Dispatching 
+  the action by hand. IT's more explicit, but verbose.
    return {
      fetchImages: (keyword, page) => dispatch(fetchImages(keyword, page))
    } 

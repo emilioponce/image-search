@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import Lightbox from 'react-image-lightbox'
 import moment from 'moment'
+import { DATE_MASK } from '../config/constants'
 
 import 'react-image-lightbox/style.css'
 import './Image.css'
@@ -23,7 +24,7 @@ class Image extends Component {
     const { url, urlBig, title, date, owner, description } = this.props
     const { isOpen } = this.state
 
-    const humanReadableDate = moment.unix(date).format('MM/DD/YYYY')
+    const humanReadableDate = moment.unix(date).format(DATE_MASK)
 
     return (
       <div className="image" onClick={this.openLightBox}>

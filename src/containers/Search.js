@@ -1,53 +1,40 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import PropTypes from 'prop-types'
 
-import { fetchImages } from '../actions'
+import { fetchImages, modifyKeyword } from '../actions'
 import { FIRST_PAGE } from '../config/constants'
 
 import './Search.css'
 
-class Search extends Component {
-  state = {
-    keyword: ''
+const Search = ({ keyword, modifyKeyword, fetchImages }) => {
+  const handleChange = event => {
+    modifyKeyword(event.target.value)
   }
 
-  handleChange = event => {
-    this.setState({ keyword: event.target.value })
-  }
-
-  handleSubmit = event => {
+  const handleSubmit = event => {
     event.preventDefault()
-    const { keyword } = this.state
-
     if (keyword !== '') {
-      this.props.fetchImages(keyword, FIRST_PAGE)
+      fetchImages(keyword, FIRST_PAGE)
     }
   }
-
-  render = () => {
-    console.log(
-      `RENDER keyword store: state:${this.state.keyword}, props:${this.props.keyword}`
-    )
-
-    return (
-      <form onSubmit={this.handleSubmit}>
-        <div className="wrapperSearch">
-          <input
-            type="text"
-            value={this.state.keyword}
-            onChange={this.handleChange}
-            placeholder="Search a term ..."
-            className="input"
-          />
-          <button type="submit" className="button ">
-            Search
-          </button>
-        </div>
-      </form>
-    )
-  }
+  return (
+    <form onSubmit={handleSubmit}>
+      <div className="wrapperSearch">
+        <input
+          type="text"
+          value={keyword}
+          onChange={handleChange}
+          placeholder="Search a term ..."
+          className="input"
+        />
+        <button type="submit" className="button ">
+          Search
+        </button>
+      </div>
+    </form>
+  )
 }
 
 const mapStateToProps = state => {
@@ -57,11 +44,13 @@ const mapStateToProps = state => {
 }
 
 const mapDispatchToProps = dispatch => {
-  return bindActionCreators({ fetchImages }, dispatch)
+  return bindActionCreators({ fetchImages, modifyKeyword }, dispatch)
 }
 
 Search.propTypes = {
-  fetchImages: PropTypes.func.isRequired
+  fetchImages: PropTypes.func.isRequired,
+  modifyKeyword: PropTypes.func.isRequired,
+  keyword: PropTypes.string
 }
 
 export default connect(
