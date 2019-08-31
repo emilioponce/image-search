@@ -17,18 +17,16 @@ export const modifyKeyword = keyword => ({
   }
 })
 
-export const fetchImages = (keyword, page) => {
-  return dispatch => {
-    dispatch(fetchImageStarted())
-    axios
-      .get(getFlickrEndpoint(keyword, page))
-      .then(res => {
-        dispatch(fetchImagesSuccess(keyword, res.data, page))
-      })
-      .catch(err => {
-        dispatch(fetchImagesFailure(err.message))
-      })
-  }
+export const fetchImages = (keyword, page) => dispatch => {
+  dispatch(fetchImageStarted())
+  return axios
+    .get(getFlickrEndpoint(keyword, page))
+    .then(res => {
+      dispatch(fetchImagesSuccess(keyword, res.data, page))
+    })
+    .catch(err => {
+      dispatch(fetchImagesFailure(err.message))
+    })
 }
 
 const fetchImageStarted = () => ({
