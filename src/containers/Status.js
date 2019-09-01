@@ -6,7 +6,7 @@ import PropTypes from 'prop-types'
 
 import './Status.css'
 
-const Status = ({ total }) => {
+export const Status = ({ total }) => {
   if (!total) {
     return null
   }

@@ -22,7 +22,7 @@ describe('SearchArea component', () => {
     ReactDOM.unmountComponentAtNode(div)
   })
 
-  it('Snapshot matchs', () => {
+  it('Snapshot matches', () => {
     const wrapper = shallow(component)
     expect(wrapper).toMatchSnapshot()
   })

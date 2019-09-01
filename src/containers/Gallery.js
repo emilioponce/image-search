@@ -6,14 +6,14 @@ import PropTypes from 'prop-types'
 import Pagination from 'react-js-pagination'
 import Loader from 'react-loader-spinner'
 
-import Image from './Image'
+import Image from '../components/Image'
 import { fetchImages } from '../actions'
 import { PAGE_RANGE } from '../config/constants'
 import { getSearchResultsSelector } from '../reducers/selectors'
 
 import './Gallery.css'
 
-const Gallery = ({ images, keyword, page, loading, fetchImages }) => {
+export const Gallery = ({ images, keyword, page, loading, fetchImages }) => {
   const handlePageChange = page => {
     fetchImages(keyword, page)
   }

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`SearchArea component Snapshot matchs 1`] = `
+exports[`SearchArea component Snapshot matches 1`] = `
 <Fragment>
   <div
     className="SearchArea"

@@ -8,7 +8,7 @@ import { FIRST_PAGE } from '../config/constants'
 
 import './Search.css'
 
-const Search = ({ keyword, modifyKeyword, fetchImages }) => {
+export const Search = ({ keyword, modifyKeyword, fetchImages }) => {
   const handleChange = event => {
     modifyKeyword(event.target.value)
   }

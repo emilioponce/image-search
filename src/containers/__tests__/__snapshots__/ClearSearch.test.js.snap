@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ClearSearch component Snapshot matches 1`] = `
+<button
+  className="button"
+  disabled={false}
+  onClick={[Function]}
+  type="submit"
+>
+  Clear search
+</button>
+`;

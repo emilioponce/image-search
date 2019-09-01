@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Image component Snapshot matchs 1`] = `
+exports[`Image component Snapshot matches 1`] = `
 <div
   className="image"
   onClick={[Function]}

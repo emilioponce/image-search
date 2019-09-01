@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Status component Snapshot matches 1`] = `
+<div
+  className="Status"
+>
+  Results found (1 images)
+</div>
+`;

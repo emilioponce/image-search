@@ -6,7 +6,7 @@ import { clearSearch } from '../actions'
 
 import './ClearSearch.css'
 
-const ClearSearch = ({ total, clearSearch }) => {
+export const ClearSearch = ({ total, clearSearch }) => {
   const handleClick = () => {
     clearSearch()
   }

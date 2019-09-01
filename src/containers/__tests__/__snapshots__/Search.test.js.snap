@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Search component Snapshot matches 1`] = `
+<form
+  onSubmit={[Function]}
+>
+  <div
+    className="wrapperSearch"
+  >
+    <input
+      className="input"
+      onChange={[Function]}
+      placeholder="Search a term ..."
+      type="text"
+      value="cats"
+    />
+    <button
+      className="button "
+      type="submit"
+    >
+      Search
+    </button>
+  </div>
+</form>
+`;
