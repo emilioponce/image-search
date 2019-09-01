@@ -1,9 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`App component Snapshot matchs 1`] = `
-Array [
-  <mock-header />,
-  <mock-main />,
-  <mock-footer />,
-]
+<Fragment>
+  <Header />
+  <mock-main />
+  <Footer />
+</Fragment>
 `;

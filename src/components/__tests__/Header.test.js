@@ -1,12 +1,17 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import renderer from 'react-test-renderer'
+
+import { shallow } from 'enzyme'
+import { configure } from 'enzyme'
+import Adapter from 'enzyme-adapter-react-16'
 
 import Header from '../Header'
 
-describe('Header component', () => {
-  const component = <Header />
+configure({ adapter: new Adapter() })
 
+const component = <Header />
+
+describe('Header component', () => {
   it('Renders without crashing', () => {
     const div = document.createElement('div')
     ReactDOM.render(component, div)
@@ -14,7 +19,7 @@ describe('Header component', () => {
   })
 
   it('Snapshot matchs', () => {
-    const tree = renderer.create(component).toJSON()
-    expect(tree).toMatchSnapshot()
+    const wrapper = shallow(component)
+    expect(wrapper).toMatchSnapshot()
   })
 })
