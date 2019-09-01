@@ -1,5 +1,3 @@
-import { createSelector } from 'reselect'
-
 import {
   FETCH_IMAGES_STARTED,
   FETCH_IMAGES_SUCCESS,
