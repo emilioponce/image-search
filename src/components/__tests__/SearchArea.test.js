@@ -2,14 +2,15 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import renderer from 'react-test-renderer'
 
-import App from '../App'
+import SearchArea from '../SearchArea'
 
-jest.mock('../Header', () => 'mock-header')
-jest.mock('../Main', () => 'mock-main')
-jest.mock('../Footer', () => 'mock-footer')
+jest.mock('../../containers/Search', () => 'mock-search')
+jest.mock('../../containers/ClearSearch', () => 'mock-clearsearch')
+jest.mock('../../containers/Status', () => 'mock-status')
 
-describe('App component', () => {
-  const component = <App />
+describe('SearchArea component', () => {
+  const component = <SearchArea />
+
   it('Renders without crashing', () => {
     const div = document.createElement('div')
     ReactDOM.render(component, div)

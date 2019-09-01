@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SearchArea component Snapshot matchs 1`] = `
+Array [
+  <div
+    className="SearchArea"
+  >
+    <mock-search />
+    <mock-clearsearch />
+  </div>,
+  <mock-status />,
+]
+`;
