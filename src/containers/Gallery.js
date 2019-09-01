@@ -9,7 +9,7 @@ import Loader from 'react-loader-spinner'
 import Image from './Image'
 import { fetchImages } from '../actions'
 import { PAGE_RANGE } from '../config/constants'
-import { getSearchResultsSelector } from '../reducers/search'
+import { getSearchResultsSelector } from '../reducers/selectors'
 
 import './Gallery.css'
 

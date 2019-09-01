@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import React from 'react'
-import { getTotalAmountOfResultsSelector } from '../reducers/search'
+import { getTotalAmountOfResultsSelector } from '../reducers/selectors'
 import { BIG_AMOUNT_OF_RESULTS } from '../config/constants'
 import PropTypes from 'prop-types'
 
